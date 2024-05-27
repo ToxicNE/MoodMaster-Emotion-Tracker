@@ -18,20 +18,23 @@ abstract interface class IRegisterScreenWidgetModel implements IWidgetModel {
   TextEditingController get confirmPasswordController;
 }
 
-RegisterScreenWidgetModel defaultRegisterScreenWidgetModelFactory(BuildContext context) {
+RegisterScreenWidgetModel defaultRegisterScreenWidgetModelFactory(
+    BuildContext context) {
   return RegisterScreenWidgetModel(RegisterScreenModel(
     authRepository: context.global.authRepository,
   ));
 }
 
-class RegisterScreenWidgetModel extends WidgetModel<RegisterScreen, IRegisterScreenModel>
+class RegisterScreenWidgetModel
+    extends WidgetModel<RegisterScreen, IRegisterScreenModel>
     implements IRegisterScreenWidgetModel {
   RegisterScreenWidgetModel(RegisterScreenModel model) : super(model);
 
   final _errorEntity = EntityStateNotifier<RegisterErrorEnum>();
 
   @override
-  ValueNotifier<EntityState<RegisterErrorEnum>> get errorListenable => _errorEntity;
+  ValueNotifier<EntityState<RegisterErrorEnum>> get errorListenable =>
+      _errorEntity;
 
   late final _confirmPasswordController = TextEditingController();
 
@@ -40,7 +43,8 @@ class RegisterScreenWidgetModel extends WidgetModel<RegisterScreen, IRegisterScr
   late final _passwordController = TextEditingController();
 
   @override
-  TextEditingController get confirmPasswordController => _confirmPasswordController;
+  TextEditingController get confirmPasswordController =>
+      _confirmPasswordController;
 
   @override
   TextEditingController get emailController => _emailController;

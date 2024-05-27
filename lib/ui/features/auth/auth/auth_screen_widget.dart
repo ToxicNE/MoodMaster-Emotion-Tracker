@@ -9,6 +9,42 @@ class AuthScreen extends ElementaryWidget<IAuthScreenWidgetModel> {
 
   @override
   Widget build(IAuthScreenWidgetModel wm) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Authorization'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Email',
+              ),
+              controller: wm.emailController,
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
+              controller: wm.passwordController,
+              obscureText: true,
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Register'),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

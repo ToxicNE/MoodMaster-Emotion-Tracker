@@ -5,13 +5,14 @@ import 'package:moodmaster/ui/features/auth/main_auth_screen/main_auth_screen_wm
 
 @RoutePage()
 class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
-  const MainAuthScreen({super.key}) : super(defaultMainAuthScreenWidgetModelFactory);
+  const MainAuthScreen({super.key})
+      : super(defaultMainAuthScreenWidgetModelFactory);
 
   @override
   Widget build(IMainAuthScreenWidgetModel wm) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Auth'),
+        title: const Text('Welcome to MoodMaster!'),
         leading: const SizedBox(),
       ),
       body: Center(
@@ -20,12 +21,12 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: wm.onAuthButtonTap,
-                child: const Text(
-                  'Auth',
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: SizedBox(
+                width: double.infinity,
+                child: Image.network(
+                  'https://otkritkis.com/wp-content/uploads/2022/07/gznan.gif',
                 ),
               ),
             ),
@@ -33,6 +34,29 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  shadowColor: Colors.lightGreenAccent,
+                  foregroundColor: Colors.black,
+                  shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+                onPressed: wm.onAuthButtonTap,
+                child: const Text(
+                  'Authorize',
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightGreen,
+                    shadowColor: Colors.lightGreenAccent,
+                    shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    foregroundColor: Colors.black),
                 onPressed: wm.onRegisterButtonTap,
                 child: const Text(
                   'Register',

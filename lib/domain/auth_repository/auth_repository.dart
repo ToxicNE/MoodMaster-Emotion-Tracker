@@ -14,4 +14,13 @@ class AuthRepository {
       throw FirebaseAuthException(code: e.code);
     }
   }
+
+  Future<void> login(String email, String password) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw FirebaseAuthException(code: e.code);
+    }
+  }
 }

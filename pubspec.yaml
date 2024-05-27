@@ -20,6 +20,7 @@ dependencies:
   elementary: ^3.0.0
   elementary_helper: ^1.0.1
   firebase_core: ^2.31.1
+  firebase_auth: ^4.19.6
 dev_dependencies:
   flutter_test:
     sdk: flutter

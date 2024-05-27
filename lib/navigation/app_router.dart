@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:moodmaster/navigation/guard/auth_guard.dart';
+import 'package:moodmaster/ui/features/auth/auth/auth_screen_widget.dart';
 import 'package:moodmaster/ui/features/auth/main_auth_screen/main_auth_screen_widget.dart';
+import 'package:moodmaster/ui/features/auth/register/register_screen_widget.dart';
 import 'package:moodmaster/ui/features/tabs/navigation.dart';
 
 part 'app_router.gr.dart';
@@ -24,5 +26,10 @@ class AppRouter extends _$AppRouter {
             authGuard,
           ],
         ),
+        AutoRoute(
+          page: MainAuthRoute.page,
+        ),
+        AutoRoute(page: RegisterRoute.page),
+        AutoRoute(page: AuthRoute.page)
       ];
 }

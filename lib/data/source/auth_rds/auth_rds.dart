@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:moodmaster/data/source/auth_rds/auth_rds.dart';
 
-class AuthRepository {
-  AuthRepository({
-    required this.authRDS,
+class AuthRDS {
+  AuthRDS({
+    required this.firebaseAuth,
   });
-  AuthRDS authRDS;
+  FirebaseAuth firebaseAuth;
 
+  // TODO() сделать авторизацию
   Future<void> register(String email, String password) async {
     try {
-      await authRDS.register(email, password);
+      await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw FirebaseAuthException(code: e.code);
     }

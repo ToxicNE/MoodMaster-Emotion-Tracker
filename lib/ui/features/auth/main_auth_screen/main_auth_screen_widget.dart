@@ -9,6 +9,39 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
 
   @override
   Widget build(IMainAuthScreenWidgetModel wm) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Auth'),
+        leading: const SizedBox(),
+      ),
+      body: Center(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: wm.onAuthButtonTap,
+                child: const Text(
+                  'Auth',
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: wm.onRegisterButtonTap,
+                child: const Text(
+                  'Register',
+                ),
+              ),
+            )
+          ],
+        ),
+      )),
+    );
   }
 }

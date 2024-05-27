@@ -35,11 +35,9 @@ class AuthScreenWidgetModel extends WidgetModel<AuthScreen, IAuthScreenModel>
   final _errorEntity = EntityStateNotifier<RegisterErrorEnum>();
 
   @override
-  // TODO: implement emailController
   TextEditingController get emailController => _emailController;
 
   @override
-  // TODO: implement errorListenable
   ValueNotifier<EntityState<RegisterErrorEnum>> get errorListenable =>
       _errorEntity;
   @override
@@ -50,6 +48,5 @@ class AuthScreenWidgetModel extends WidgetModel<AuthScreen, IAuthScreenModel>
   }
 
   @override
-  // TODO: implement passwordController
   TextEditingController get passwordController => _passwordController;
 }

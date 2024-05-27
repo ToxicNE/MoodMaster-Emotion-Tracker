@@ -11,9 +11,16 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
   @override
   Widget build(IMainAuthScreenWidgetModel wm) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: const Text('Welcome to MoodMaster!'),
+        title: const Text(
+          'Welcome to MoodMaster!',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        elevation: 0,
         leading: const SizedBox(),
+        backgroundColor: Colors.transparent,
       ),
       body: Center(
           child: Padding(
@@ -26,7 +33,7 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
               child: SizedBox(
                 width: double.infinity,
                 child: Image.network(
-                  'https://otkritkis.com/wp-content/uploads/2022/07/gznan.gif',
+                  'https://i.gifer.com/embedded/download/QtBT.gif',
                 ),
               ),
             ),
@@ -35,11 +42,12 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightGreen,
-                  shadowColor: Colors.lightGreenAccent,
+                  backgroundColor: Colors.blueGrey.shade200,
+                  shadowColor: Colors.blueGrey,
                   foregroundColor: Colors.black,
                   shape: ContinuousRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(20),
+                      side: const BorderSide(color: Colors.black, width: 2)),
                 ),
                 onPressed: wm.onAuthButtonTap,
                 child: const Text(
@@ -52,10 +60,11 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                    shadowColor: Colors.lightGreenAccent,
+                    backgroundColor: Colors.blue.shade200,
+                    shadowColor: Colors.blue.shade400,
                     shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(20),
+                        side: const BorderSide(color: Colors.black, width: 2)),
                     foregroundColor: Colors.black),
                 onPressed: wm.onRegisterButtonTap,
                 child: const Text(

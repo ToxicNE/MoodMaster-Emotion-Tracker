@@ -38,6 +38,15 @@ class AuthScreen extends ElementaryWidget<IAuthScreenWidgetModel> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  shadowColor: Colors.lightGreenAccent,
+                  foregroundColor: Colors.black,
+                  shape: ContinuousRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: const BorderSide(color: Colors.black, width: 2),
+                  ),
+                ),
                 onPressed: () {},
                 child: const Text('Register'),
               ),

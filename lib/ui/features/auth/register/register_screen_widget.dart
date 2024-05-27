@@ -25,6 +25,7 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                 labelText: 'Email',
               ),
               controller: wm.emailController,
+              keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 16),
             TextField(
@@ -48,6 +49,14 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightGreen,
+                  shadowColor: Colors.lightGreenAccent,
+                  foregroundColor: Colors.black,
+                  shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: const BorderSide(color: Colors.black, width: 2)),
+                ),
                 onPressed: wm.register,
                 child: const Text('Register'),
               ),

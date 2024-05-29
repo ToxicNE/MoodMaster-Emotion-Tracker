@@ -26,7 +26,7 @@ AuthScreenWidgetModel defaultAuthScreenWidgetModelFactory(
 
 class AuthScreenWidgetModel extends WidgetModel<AuthScreen, IAuthScreenModel>
     implements IAuthScreenWidgetModel {
-  AuthScreenWidgetModel(AuthScreenModel model) : super(model);
+  AuthScreenWidgetModel(AuthScreenModel super.model);
 
   late final _emailController = TextEditingController();
 

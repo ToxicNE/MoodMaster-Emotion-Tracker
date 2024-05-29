@@ -28,7 +28,7 @@ RegisterScreenWidgetModel defaultRegisterScreenWidgetModelFactory(
 class RegisterScreenWidgetModel
     extends WidgetModel<RegisterScreen, IRegisterScreenModel>
     implements IRegisterScreenWidgetModel {
-  RegisterScreenWidgetModel(RegisterScreenModel model) : super(model);
+  RegisterScreenWidgetModel(RegisterScreenModel super.model);
 
   final _errorEntity = EntityStateNotifier<RegisterErrorEnum>();
 

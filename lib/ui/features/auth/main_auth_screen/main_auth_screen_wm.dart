@@ -11,13 +11,15 @@ abstract interface class IMainAuthScreenWidgetModel implements IWidgetModel {
   void onRegisterButtonTap();
 }
 
-MainAuthScreenWidgetModel defaultMainAuthScreenWidgetModelFactory(BuildContext context) {
+MainAuthScreenWidgetModel defaultMainAuthScreenWidgetModelFactory(
+    BuildContext context) {
   return MainAuthScreenWidgetModel(MainAuthScreenModel());
 }
 
-class MainAuthScreenWidgetModel extends WidgetModel<MainAuthScreen, IMainAuthScreenModel>
+class MainAuthScreenWidgetModel
+    extends WidgetModel<MainAuthScreen, IMainAuthScreenModel>
     implements IMainAuthScreenWidgetModel {
-  MainAuthScreenWidgetModel(MainAuthScreenModel model) : super(model);
+  MainAuthScreenWidgetModel(MainAuthScreenModel super.model);
 
   @override
   void onAuthButtonTap() {

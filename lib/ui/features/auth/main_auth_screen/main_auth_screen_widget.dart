@@ -61,7 +61,7 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue.shade200,
-                    shadowColor: Colors.blue.shade400,
+                    shadowColor: Colors.blue.shade700,
                     shape: ContinuousRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                         side: const BorderSide(color: Colors.black, width: 2)),

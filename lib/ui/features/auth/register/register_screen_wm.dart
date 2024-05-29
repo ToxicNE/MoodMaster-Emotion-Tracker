@@ -69,7 +69,9 @@ class RegisterScreenWidgetModel
       return _errorEntity.content(RegisterErrorEnum.diffrentPasswords);
     }
 
-    // TODO() проверка на правильность пароля
+    if (password.length < 5) {
+      return _errorEntity.content(RegisterErrorEnum.shortPassword);
+    }
 
     if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email)) {
       return _errorEntity.content(RegisterErrorEnum.incorrectEmail);

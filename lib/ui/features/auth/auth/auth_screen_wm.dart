@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:elementary/elementary.dart';
 import 'package:moodmaster/di/global/global_scope.dart';
+import 'package:moodmaster/navigation/app_router.dart';
 import 'package:moodmaster/ui/features/auth/auth/auth_screen_model.dart';
 import 'package:moodmaster/ui/features/auth/auth/auth_screen_widget.dart';
 
@@ -15,6 +17,8 @@ abstract interface class IAuthScreenWidgetModel implements IWidgetModel {
   TextEditingController get emailController;
 
   TextEditingController get passwordController;
+
+  void onLoginButtonTap();
 }
 
 AuthScreenWidgetModel defaultAuthScreenWidgetModelFactory(
@@ -49,4 +53,9 @@ class AuthScreenWidgetModel extends WidgetModel<AuthScreen, IAuthScreenModel>
 
   @override
   TextEditingController get passwordController => _passwordController;
+
+  @override
+  void onLoginButtonTap() {
+    context.router.push(const InAppAuthRoute());
+  }
 }

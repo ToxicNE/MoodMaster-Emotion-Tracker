@@ -4,6 +4,7 @@ import 'package:moodmaster/data/source/auth_rds/auth_rds.dart';
 import 'package:moodmaster/data/source/auth_rds/in_app_auth_rds.dart';
 import 'package:moodmaster/di/app_async_dependency.dart';
 import 'package:moodmaster/domain/auth_repository/auth_repository.dart';
+import 'package:moodmaster/domain/in_app_auth_repository/in_app_auth_repository.dart';
 import 'package:moodmaster/navigation/app_router.dart';
 import 'package:moodmaster/navigation/guard/auth_guard.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,8 @@ class GlobalDependency extends AppAsyncDependency {
   late final SharedPreferences sharedPreferences;
 
   late final InAppAuthRds inAppAuthRDS;
+
+  late final InAppAuthRepository inAppAuthRepository;
   @override
   Future<void> initAsync(BuildContext context) async {
     authGuard = AuthGuard();
@@ -29,6 +32,7 @@ class GlobalDependency extends AppAsyncDependency {
     authRepository = AuthRepository(authRDS: authRDS);
     sharedPreferences = await SharedPreferences.getInstance();
     inAppAuthRDS = InAppAuthRds(sharedPreferences: sharedPreferences);
+    inAppAuthRepository = InAppAuthRepository(inAppAuthRDS: inAppAuthRDS);
   }
 }
 

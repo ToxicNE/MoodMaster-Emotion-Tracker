@@ -31,11 +31,10 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: SizedBox(
-                width: double.infinity,
-                child: Image.network(
-                  'https://i.gifer.com/embedded/download/QtBT.gif',
-                ),
-              ),
+                  width: double.infinity,
+                  child: Image.asset(
+                    'lib/ui/assets/main_gif_cat.gif',
+                  )),
             ),
             const SizedBox(height: 20),
             SizedBox(
@@ -60,8 +59,8 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade200,
-                    shadowColor: Colors.blue.shade700,
+                    backgroundColor: Colors.blueAccent.shade700,
+                    shadowColor: Colors.blue.shade900,
                     shape: ContinuousRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                         side: const BorderSide(color: Colors.black, width: 2)),

@@ -10,8 +10,11 @@ class AuthScreen extends ElementaryWidget<IAuthScreenWidgetModel> {
   @override
   Widget build(IAuthScreenWidgetModel wm) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade300,
       appBar: AppBar(
-        title: const Text('Authorization'),
+        title: const Text('Authorization',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.transparent,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -39,16 +42,15 @@ class AuthScreen extends ElementaryWidget<IAuthScreenWidgetModel> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightGreen,
-                  shadowColor: Colors.lightGreenAccent,
+                  backgroundColor: Colors.blueGrey.shade400,
+                  shadowColor: Colors.blueGrey,
                   foregroundColor: Colors.black,
                   shape: ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    side: const BorderSide(color: Colors.black, width: 2),
-                  ),
+                      borderRadius: BorderRadius.circular(20),
+                      side: const BorderSide(color: Colors.black, width: 2)),
                 ),
-                onPressed: () {},
-                child: const Text('Register'),
+                onPressed: wm.login,
+                child: const Text('Log in'),
               ),
             )
           ],

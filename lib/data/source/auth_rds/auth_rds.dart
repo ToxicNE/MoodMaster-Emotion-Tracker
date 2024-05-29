@@ -6,7 +6,6 @@ class AuthRDS {
   });
   FirebaseAuth firebaseAuth;
 
-  // TODO() сделать авторизацию
   Future<void> register(String email, String password) async {
     try {
       await firebaseAuth.createUserWithEmailAndPassword(

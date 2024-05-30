@@ -27,14 +27,4 @@ class InAppAuthRds {
 
     return User.fromJson(jsonDecode(userJson));
   }
-
-  Future<void> checkIsUserLoggedIn() async {
-    try {
-      if (sharedPreferences.getString(_key) != null) {
-        return;
-      }
-    } on Exception catch (e) {
-      throw Exception(e);
-    }
-  }
 }

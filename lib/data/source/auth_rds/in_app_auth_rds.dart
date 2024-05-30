@@ -19,4 +19,22 @@ class InAppAuthRds {
       throw Exception(e);
     }
   }
+
+  User? getUser() {
+    final userJson = sharedPreferences.getString(_key);
+
+    if (userJson == null) return null;
+
+    return User.fromJson(jsonDecode(userJson));
+  }
+
+  Future<void> checkIsUserLoggedIn() async {
+    try {
+      if (sharedPreferences.getString(_key) != null) {
+        return;
+      }
+    } on Exception catch (e) {
+      throw Exception(e);
+    }
+  }
 }

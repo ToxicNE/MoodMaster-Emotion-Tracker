@@ -5,8 +5,7 @@ import 'package:moodmaster/ui/features/auth/main_auth_screen/main_auth_screen_wm
 
 @RoutePage()
 class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
-  const MainAuthScreen({super.key})
-      : super(defaultMainAuthScreenWidgetModelFactory);
+  const MainAuthScreen({super.key}) : super(defaultMainAuthScreenWidgetModelFactory);
 
   @override
   Widget build(IMainAuthScreenWidgetModel wm) {
@@ -23,57 +22,59 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
         backgroundColor: Colors.transparent,
       ),
       body: Center(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: SizedBox(
-                  width: double.infinity,
-                  child: Image.asset(
-                    'lib/ui/assets/main_gif_cat.gif',
-                  )),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueGrey.shade200,
-                  shadowColor: Colors.blueGrey,
-                  foregroundColor: Colors.black,
-                  shape: ContinuousRectangleBorder(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: SizedBox(
+                    width: double.infinity,
+                    child: Image.asset(
+                      'assets/main_gif_cat.gif',
+                    )),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey.shade200,
+                    shadowColor: Colors.blueGrey,
+                    foregroundColor: Colors.black,
+                    shape: ContinuousRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      side: const BorderSide(color: Colors.black, width: 2)),
-                ),
-                onPressed: wm.onAuthButtonTap,
-                child: const Text(
-                  'Authorize',
+                    ),
+                  ),
+                  onPressed: wm.onAuthButtonTap,
+                  child: const Text(
+                    'Authorize',
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent.shade700,
                     shadowColor: Colors.blue.shade900,
                     shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: const BorderSide(color: Colors.black, width: 2)),
-                    foregroundColor: Colors.black),
-                onPressed: wm.onRegisterButtonTap,
-                child: const Text(
-                  'Register',
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    foregroundColor: Colors.black,
+                  ),
+                  onPressed: wm.onRegisterButtonTap,
+                  child: const Text(
+                    'Register',
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
-      )),
+      ),
     );
   }
 }

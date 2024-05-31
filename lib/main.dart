@@ -8,11 +8,14 @@ import 'package:moodmaster/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  FirebaseAuth.instance.signOut();
+  await FirebaseAuth.instance.signOut();
+
+
 
   runApp(
     AsyncDependencyWidget(

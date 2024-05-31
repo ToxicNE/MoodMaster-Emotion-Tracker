@@ -12,7 +12,9 @@ class AuthGuard extends AutoRouteGuard {
   @override
   Future<void> onNavigation(
       NavigationResolver resolver, StackRouter router) async {
-    if (FirebaseAuth.instance.currentUser == null) {
+    User? fireBaseCurrentUser = FirebaseAuth.instance.currentUser;
+    print("fireBaseCurrentUser: $fireBaseCurrentUser");
+    if (fireBaseCurrentUser == null) {
       resolver.redirect(const MainAuthRoute());
       return;
     } else if (inAppAuthRDS.getUser() == null) {
@@ -20,6 +22,5 @@ class AuthGuard extends AutoRouteGuard {
     } else {
       resolver.next(true);
     }
-    //TODO() Сделать проверки на то что у тебя есть инфа о юзера в локальном хранилище, если её нет отправлять пользователя на экран ввода инфы о себе
   }
 }

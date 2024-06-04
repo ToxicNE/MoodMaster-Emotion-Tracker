@@ -7,16 +7,24 @@ import 'package:moodmaster/ui/features/auth/register/register_screen_wm.dart';
 
 @RoutePage()
 class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
-  const RegisterScreen({super.key}) : super(defaultRegisterScreenWidgetModelFactory);
+  const RegisterScreen({super.key})
+      : super(defaultRegisterScreenWidgetModelFactory);
 
   @override
   Widget build(IRegisterScreenWidgetModel wm) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: const Text('Создайте аккаунт',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
       ),
       body: Stack(
         children: [
+          Image.asset(
+            'assets/background_img.JPEG',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
@@ -51,7 +59,7 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                 TextField(
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Email',
+                    labelText: 'Электронная почта',
                   ),
                   controller: wm.emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -60,7 +68,7 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                 TextField(
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Password',
+                    labelText: 'Пароль',
                   ),
                   controller: wm.passwordController,
                   obscureText: true,
@@ -69,7 +77,7 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                 TextField(
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Confirm password',
+                    labelText: 'Повторите пароль',
                   ),
                   controller: wm.confirmPasswordController,
                   obscureText: true,
@@ -84,8 +92,7 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.lightGreen,
-                            shadowColor: Colors.lightGreenAccent,
+                            backgroundColor: Colors.blue,
                             foregroundColor: Colors.black,
                             shape: ContinuousRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
@@ -100,15 +107,14 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.lightGreen,
-                          shadowColor: Colors.lightGreenAccent,
+                          backgroundColor: Colors.blue,
                           foregroundColor: Colors.black,
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
                         onPressed: wm.register,
-                        child: const Text('Register'),
+                        child: const Text('Зарегистрироваться'),
                       ),
                     );
                   },

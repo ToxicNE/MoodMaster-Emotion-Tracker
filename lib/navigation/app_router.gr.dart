@@ -39,6 +39,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MainAuthScreen(),
       );
     },
+    MoodInfoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MoodInfoScreen(),
+      );
+    },
+    MoodRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MoodScreen(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfileScreen(),
+      );
+    },
     RegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -100,6 +118,48 @@ class MainAuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'MainAuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MoodInfoScreen]
+class MoodInfoRoute extends PageRouteInfo<void> {
+  const MoodInfoRoute({List<PageRouteInfo>? children})
+      : super(
+          MoodInfoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MoodInfoRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MoodScreen]
+class MoodRoute extends PageRouteInfo<void> {
+  const MoodRoute({List<PageRouteInfo>? children})
+      : super(
+          MoodRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MoodRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfileScreen]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

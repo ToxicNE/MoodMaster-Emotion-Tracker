@@ -9,7 +9,6 @@ import 'package:moodmaster/ui/features/auth/register/register_screen_model.dart'
 import 'package:moodmaster/ui/features/auth/register/register_screen_widget.dart';
 
 abstract interface class IRegisterScreenWidgetModel implements IWidgetModel {
-  
   ValueNotifier<EntityState<RegisterErrorEnum?>> get errorListenable;
 
   ValueNotifier<EntityState<bool>> get hasRegisterEmailSendedListenable;
@@ -27,13 +26,16 @@ abstract interface class IRegisterScreenWidgetModel implements IWidgetModel {
   void onContinueRegistrationTap();
 }
 
-RegisterScreenWidgetModel defaultRegisterScreenWidgetModelFactory(BuildContext context) {
+RegisterScreenWidgetModel defaultRegisterScreenWidgetModelFactory(
+    BuildContext context) {
   return RegisterScreenWidgetModel(RegisterScreenModel(
     authRepository: context.global.authRepository,
+    inappAuthRepository: context.global.inAppAuthRepository,
   ));
 }
 
-class RegisterScreenWidgetModel extends WidgetModel<RegisterScreen, IRegisterScreenModel>
+class RegisterScreenWidgetModel
+    extends WidgetModel<RegisterScreen, IRegisterScreenModel>
     implements IRegisterScreenWidgetModel {
   RegisterScreenWidgetModel(RegisterScreenModel super.model);
 
@@ -44,13 +46,16 @@ class RegisterScreenWidgetModel extends WidgetModel<RegisterScreen, IRegisterScr
   final _registerLoadingEntity = EntityStateNotifier<bool>();
 
   @override
-  ValueNotifier<EntityState<RegisterErrorEnum?>> get errorListenable => _errorEntity;
+  ValueNotifier<EntityState<RegisterErrorEnum?>> get errorListenable =>
+      _errorEntity;
 
   @override
-  ValueNotifier<EntityState<bool>> get hasRegisterEmailSendedListenable => _hasRegisteredEmailSended;
+  ValueNotifier<EntityState<bool>> get hasRegisterEmailSendedListenable =>
+      _hasRegisteredEmailSended;
 
   @override
-  ValueNotifier<EntityState<bool>> get registerLoadingListenable => _registerLoadingEntity;
+  ValueNotifier<EntityState<bool>> get registerLoadingListenable =>
+      _registerLoadingEntity;
 
   late final _confirmPasswordController = TextEditingController();
 
@@ -59,7 +64,8 @@ class RegisterScreenWidgetModel extends WidgetModel<RegisterScreen, IRegisterScr
   late final _passwordController = TextEditingController();
 
   @override
-  TextEditingController get confirmPasswordController => _confirmPasswordController;
+  TextEditingController get confirmPasswordController =>
+      _confirmPasswordController;
 
   @override
   TextEditingController get emailController => _emailController;

@@ -27,4 +27,8 @@ class InAppAuthRds {
 
     return User.fromJson(jsonDecode(userJson));
   }
+
+  Future<void> clearUser() async {
+    sharedPreferences.remove(_key);
+  }
 }

@@ -19,12 +19,12 @@ class RegisterScreen extends ElementaryWidget<IRegisterScreenWidgetModel> {
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/background_img.JPEG',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-          ),
+          // Image.asset(
+          //   'assets/background_img.JPEG',
+          //   fit: BoxFit.cover,
+          //   width: double.infinity,
+          //   height: double.infinity,
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(

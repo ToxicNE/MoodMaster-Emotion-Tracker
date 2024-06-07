@@ -19,12 +19,12 @@ class MoodScreen extends ElementaryWidget<IMoodScreenWidgetModel> {
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/background_img.JPEG',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-          ),
+          // Image.asset(
+          //   'assets/background_img.JPEG',
+          //   fit: BoxFit.cover,
+          //   width: double.infinity,
+          //   height: double.infinity,
+          // ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

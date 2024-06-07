@@ -19,12 +19,12 @@ class InAppAuthScreen extends ElementaryWidget<IInAppAuthScreenWidgetModel> {
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/background_img.JPEG',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-          ),
+          // Image.asset(
+          //   'assets/background_img.JPEG',
+          //   fit: BoxFit.cover,
+          //   width: double.infinity,
+          //   height: double.infinity,
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(

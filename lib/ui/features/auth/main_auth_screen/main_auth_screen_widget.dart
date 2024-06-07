@@ -13,12 +13,12 @@ class MainAuthScreen extends ElementaryWidget<IMainAuthScreenWidgetModel> {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset(
-            'assets/background_img.JPEG',
-            fit: BoxFit.fill,
-            width: double.infinity,
-            height: double.infinity,
-          ),
+          // Image.asset(
+          //   'assets/background_img.JPEG',
+          //   fit: BoxFit.fill,
+          //   width: double.infinity,
+          //   height: double.infinity,
+          // ),
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),

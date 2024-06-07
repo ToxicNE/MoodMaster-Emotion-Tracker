@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:moodmaster/data/models/mood/mood_model.dart';
 import 'package:moodmaster/data/source/mood_rds/mood_rds.dart';
 
 class MoodRepository {
@@ -5,27 +7,28 @@ class MoodRepository {
     required this.moodRDS,
   });
   MoodRDS moodRDS;
-  Future<void> addSadPoint() {
-    pieData[0].yData += 1;
-    return moodRDS.sharedPreferences.setInt('sadMood', pieData[0].yData);
+
+  ValueNotifier<List<MoodModel>?> moodNotifier = ValueNotifier(null);
+
+  // 1 Получить изначальную информацию о настроении пользователя из sharedPreferences
+  // 2 Засетить эту информацию в moodNotifier через moodNotifier.value = data;
+  Future<void> setNotifierValue() async {
+    final moods = moodRDS.getMood();
+    if (moods == null) return;
+    moodNotifier.value = moods;
   }
 
-  Future<void> addNormalPoint() {
-    pieData[1].yData += 1;
-    return moodRDS.sharedPreferences.setInt('normalMood', pieData[1].yData);
+  Future<void> setNewMood(MoodModel models) async {
+    await moodRDS.setMood(models);
+
+    setNotifierValue();
   }
 
-  Future<void> addHappyPoint() {
-    pieData[2].yData += 1;
-    return moodRDS.sharedPreferences.setInt('happyMood', pieData[2].yData);
+  Future<void> clearMood() async {
+    await moodRDS.clearMood();
+
+    setNotifierValue();
   }
 
-  Future<void> clearMoodInfo() async {
-    pieData.forEach((element) {
-      element.yData = 1;
-    });
-    moodRDS.sharedPreferences.setInt('sadMood', 0);
-    moodRDS.sharedPreferences.setInt('normalMood', 0);
-    moodRDS.sharedPreferences.setInt('happyMood', 0);
-  }
+  List<MoodModel>? getMoods() => moodRDS.getMood();
 }

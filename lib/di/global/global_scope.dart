@@ -38,14 +38,13 @@ class GlobalDependency extends AppAsyncDependency {
     inAppAuthRDS = InAppAuthRds(sharedPreferences: sharedPreferences);
     authGuard = AuthGuard(inAppAuthRDS: inAppAuthRDS);
     router = AppRouter(authGuard: authGuard);
-    authRDS = AuthRDS(
-        firebaseAuth: FirebaseAuth.instance,
-        sharedPreferences: sharedPreferences);
+    authRDS = AuthRDS(firebaseAuth: FirebaseAuth.instance, sharedPreferences: sharedPreferences);
     authRepository = AuthRepository(authRDS: authRDS);
-    inAppAuthRepository =
-        InAppAuthRepository(inAppAuthRDS: inAppAuthRDS, router: router);
+    inAppAuthRepository = InAppAuthRepository(inAppAuthRDS: inAppAuthRDS, router: router);
     moodRDS = MoodRDS(sharedPreferences: sharedPreferences);
     moodRepository = MoodRepository(moodRDS: moodRDS);
+
+    moodRepository.setNotifierValue();
   }
 }
 

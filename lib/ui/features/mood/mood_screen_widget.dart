@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:moodmaster/data/models/enums/mood_enum.dart';
 
 import 'mood_screen_wm.dart';
 
@@ -12,8 +13,7 @@ class MoodScreen extends ElementaryWidget<IMoodScreenWidgetModel> {
   Widget build(IMoodScreenWidgetModel wm) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Оценка эмоций",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: const Text("Оценка эмоций", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         centerTitle: true,
         leading: const SizedBox(),
       ),
@@ -38,27 +38,24 @@ class MoodScreen extends ElementaryWidget<IMoodScreenWidgetModel> {
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.redAccent,
-                              foregroundColor: Colors.black),
-                          onPressed: () => wm.onSadTap(),
+                              backgroundColor: Colors.redAccent, foregroundColor: Colors.black),
+                          onPressed: () => wm.onMoodSetTap(MoodEnum.sad),
                           child: const Text('Плохое'),
                         )),
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.yellowAccent,
-                              foregroundColor: Colors.black),
-                          onPressed: () => wm.onNormalTap(),
+                              backgroundColor: Colors.yellowAccent, foregroundColor: Colors.black),
+                          onPressed: () => wm.onMoodSetTap(MoodEnum.normal),
                           child: const Text('Нормальное'),
                         )),
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.lightGreenAccent,
-                              foregroundColor: Colors.black),
-                          onPressed: () => wm.onHappyTap(),
+                              backgroundColor: Colors.lightGreenAccent, foregroundColor: Colors.black),
+                          onPressed: () => wm.onMoodSetTap(MoodEnum.happy),
                           child: const Text('Хорошее'),
                         )),
                   ],

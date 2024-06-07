@@ -4,5 +4,5 @@ enum MoodEnum {
   sad,
   angry,
   fear,
-  surprise,
+  surprise;
 }
